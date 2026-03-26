@@ -48,7 +48,7 @@ const ProductGrid = () => {
   return (
     <section className="container mx-auto py-6">
       {/* Filters — sticky below header+infobar */}
-      <div className="sticky top-[120px] z-30 bg-background py-3 -mx-4 px-4 border-b border-border mb-6">
+      <div className="sticky top-[calc(var(--header-h,52px)+var(--info-h,36px))] z-30 bg-background py-3 -mx-4 px-4 border-b border-border mb-6">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
