@@ -7,6 +7,7 @@ export type Product = {
   category: "gpu-nvidia" | "gpu-amd" | "psu" | "combo";
   hasBox: boolean;
   note?: string;
+  images?: string[];
 };
 
 export const WHATSAPP_NUMBER = "5491100000000"; // Replace with actual number
