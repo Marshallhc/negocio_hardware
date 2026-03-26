@@ -25,7 +25,7 @@ const Footer = () => (
           href={WHATSAPP_COMMUNITY}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg bg-whatsapp px-4 py-2 text-xs font-medium text-whatsapp-foreground hover:opacity-90"
+          className="inline-flex items-center gap-2 bg-whatsapp px-4 py-2 text-xs font-medium text-whatsapp-foreground hover:opacity-90"
         >
           <MessageCircle className="w-3.5 h-3.5" />
           Unirse al grupo de WhatsApp
