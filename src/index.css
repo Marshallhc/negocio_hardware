@@ -6,81 +6,93 @@
 
 @layer base {
   :root {
-    --background: 0 0% 97%;
-    --foreground: 0 0% 8%;
+    --background: 30 20% 90%;
+    --foreground: 25 30% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card: 33 25% 85%;
+    --card-foreground: 25 30% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 33 25% 85%;
+    --popover-foreground: 25 30% 12%;
 
-    --primary: 145 60% 32%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 25 55% 35%;
+    --primary-foreground: 35 30% 95%;
 
-    --secondary: 0 0% 93%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 30 18% 78%;
+    --secondary-foreground: 25 25% 18%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 30 15% 82%;
+    --muted-foreground: 25 12% 45%;
 
-    --accent: 145 50% 94%;
-    --accent-foreground: 145 60% 25%;
+    --accent: 30 30% 75%;
+    --accent-foreground: 25 40% 22%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 35 30% 95%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 145 60% 32%;
+    --border: 30 15% 72%;
+    --input: 30 15% 72%;
+    --ring: 25 55% 35%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
-    --whatsapp: 142 70% 45%;
+    --whatsapp: 142 70% 40%;
     --whatsapp-foreground: 0 0% 100%;
 
     --badge-used: 30 80% 50%;
     --badge-new: 145 60% 40%;
     --badge-box: 210 60% 50%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 30 20% 88%;
+    --sidebar-foreground: 25 20% 20%;
+    --sidebar-primary: 25 55% 35%;
+    --sidebar-primary-foreground: 35 30% 95%;
+    --sidebar-accent: 30 18% 80%;
+    --sidebar-accent-foreground: 25 20% 20%;
+    --sidebar-border: 30 15% 72%;
+    --sidebar-ring: 25 55% 35%;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 145 60% 40%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 145 40% 15%;
-    --accent-foreground: 145 60% 70%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 145 60% 40%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 25 20% 10%;
+    --foreground: 30 15% 85%;
+
+    --card: 25 18% 14%;
+    --card-foreground: 30 15% 85%;
+
+    --popover: 25 18% 14%;
+    --popover-foreground: 30 15% 85%;
+
+    --primary: 30 50% 45%;
+    --primary-foreground: 25 20% 8%;
+
+    --secondary: 25 15% 20%;
+    --secondary-foreground: 30 15% 80%;
+
+    --muted: 25 12% 18%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 30 25% 22%;
+    --accent-foreground: 30 30% 75%;
+
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 30 15% 90%;
+
+    --border: 25 12% 22%;
+    --input: 25 12% 22%;
+    --ring: 30 50% 45%;
+
+    --whatsapp: 142 70% 40%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    --sidebar-background: 25 20% 8%;
+    --sidebar-foreground: 30 12% 85%;
+    --sidebar-primary: 30 50% 45%;
+    --sidebar-primary-foreground: 25 20% 8%;
+    --sidebar-accent: 25 15% 16%;
+    --sidebar-accent-foreground: 30 12% 85%;
+    --sidebar-border: 25 12% 20%;
+    --sidebar-ring: 30 50% 45%;
   }
 }
 
