@@ -4,13 +4,15 @@ import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  const headerRef = useRef<HTMLDivElement>(null);
-  const infoRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const update = () => {
-      const hH = headerRef.current?.offsetHeight ?? 52;
-      const iH = infoRef.current?.offsetHeight ?? 36;
+      if (!wrapperRef.current) return;
+      const header = wrapperRef.current.querySelector("[data-header]");
+      const info = wrapperRef.current.querySelector("[data-infobar]");
+      const hH = header?.getBoundingClientRect().height ?? 52;
+      const iH = info?.getBoundingClientRect().height ?? 36;
       document.documentElement.style.setProperty("--header-h", `${hH}px`);
       document.documentElement.style.setProperty("--info-h", `${iH}px`);
     };
@@ -20,9 +22,9 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <div ref={headerRef}><Header /></div>
-      <div ref={infoRef}><StoreInfoBar /></div>
+    <div ref={wrapperRef} className="min-h-screen bg-background flex flex-col">
+      <Header />
+      <StoreInfoBar />
       <main className="flex-1">
         <ProductGrid />
       </main>

@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
-    <header className="border-b border-border bg-card sticky top-0 z-50">
+    <header data-header className="border-b border-border bg-card sticky top-0 z-50">
       <div className="container mx-auto py-2 px-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-primary flex items-center justify-center shrink-0">
@@ -61,10 +61,9 @@ export const StoreInfoBar = () => {
     return () => clearInterval(interval);
   }, [isMobile]);
 
-  // Desktop: show all items in a row
   if (!isMobile) {
     return (
-      <section className="bg-card border-b border-border sticky top-[calc(var(--header-h,52px))] z-40">
+      <section data-infobar className="bg-card border-b border-border sticky top-[var(--header-h,52px)] z-40">
         <div className="container mx-auto py-3 px-4 flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted-foreground">
           {INFO_ITEMS.map((item, i) => (
             <span key={i} className="inline-flex items-center gap-1.5">
@@ -76,10 +75,9 @@ export const StoreInfoBar = () => {
     );
   }
 
-  // Mobile: carousel
   const item = INFO_ITEMS[current];
   return (
-    <section className="bg-card border-b border-border sticky top-[calc(var(--header-h,52px))] z-40">
+    <section data-infobar className="bg-card border-b border-border sticky top-[var(--header-h,52px)] z-40">
       <div className="container mx-auto py-2 px-4 text-xs text-muted-foreground">
         <div className="flex items-center justify-between gap-2">
           <span className="inline-flex items-center gap-1.5 truncate">
