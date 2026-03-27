@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +8,7 @@
   :root {
     --background: 220 14% 96%;
     --foreground: 220 20% 10%;
+
 
     --header-h: 60px; 
     --info-h: 48px;
@@ -32,6 +33,29 @@
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
+
+
+    --card: 220 14% 92%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 220 14% 92%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 86%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 220 14% 84%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
 
     --border: 220 10% 85%;
     --input: 220 10% 85%;
