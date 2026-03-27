@@ -10,7 +10,7 @@ export type Product = {
   images?: string[];
 };
 
-export const WHATSAPP_NUMBER = "5491100000000"; // Replace with actual number
+export const WHATSAPP_NUMBER = "5491150510046"; // Replace with actual number
 export const WHATSAPP_COMMUNITY = "https://chat.whatsapp.com/KcKTVOZXstW8ErhnpFGzxh";
 
 export const STORE_INFO = {
