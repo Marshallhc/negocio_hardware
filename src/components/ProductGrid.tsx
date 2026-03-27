@@ -47,65 +47,79 @@ const ProductGrid = () => {
 
   return (
     <section className="container mx-auto py-6">
-      {/* Filters — sticky below header+infobar */}
-      <div className="sticky top-[calc(var(--header-h,52px)+var(--info-h,36px))] z-30 bg-background py-3 -mx-4 px-4 border-b border-border mb-6">
-        <div className="flex flex-col md:flex-row gap-3">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Buscar por modelo, marca..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full border border-input bg-card pl-9 pr-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-            />
+      {/* Filters — Mantiene el cálculo de altura exacto para no romper el scroll móvil */}
+      <div 
+        className="sticky z-30 bg-background/95 backdrop-blur-md py-3 -mx-4 px-4 border-b border-border mb-6 transition-all" 
+        style={{top: 'calc(var(--header-h, 60px) + var(--info-h, 40px) - 1.5px)'}}
+      >
+        <div className="flex flex-col gap-3">
+          
+          {/* Fila superior: Buscador + Ordenar */}
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1 group">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+              <input
+                type="text"
+                placeholder="Buscar..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full border border-input bg-card pl-9 pr-4 py-2 text-sm text-foreground rounded-md focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+              />
+            </div>
+
+            {/* Selector de ordenamiento compacto en móvil */}
+            <div className="flex items-center gap-1.5 bg-card border border-input px-2 py-2 rounded-md">
+              <SlidersHorizontal className="w-3.5 h-3.5 text-muted-foreground" />
+              <select
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortOption)}
+                className="bg-transparent text-[11px] font-bold uppercase tracking-tighter focus:outline-none appearance-none cursor-pointer"
+              >
+                {SORTS.map((s) => (
+                  <option key={s.value} value={s.value}>
+                    {/* Abreviamos el texto en móvil si es necesario */}
+                    {s.label.replace("precio", "").trim()}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+
+          {/* Fila inferior: Categorías en scroll horizontal */}
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             {CATEGORIES.map((c) => (
               <button
                 key={c.value}
                 onClick={() => setCategory(c.value)}
-                className={`whitespace-nowrap px-3 py-2 text-xs font-medium transition-colors ${
+                className={`whitespace-nowrap px-3 py-1.5 text-[11px] font-bold uppercase tracking-tight rounded-md border transition-all ${
                   category === c.value
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-accent"
+                    ? "bg-primary border-primary text-primary-foreground shadow-sm"
+                    : "bg-secondary/50 border-transparent text-muted-foreground hover:bg-secondary"
                 }`}
               >
                 {c.label}
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-2">
-            <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
-            <select
-              value={sort}
-              onChange={(e) => setSort(e.target.value as SortOption)}
-              className="border border-input bg-card px-3 py-2 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-            >
-              {SORTS.map((s) => (
-                <option key={s.value} value={s.value}>{s.label}</option>
-              ))}
-            </select>
-          </div>
         </div>
       </div>
 
       {/* Results count */}
-      <p className="text-xs text-muted-foreground mb-4">
+      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-4 px-1">
         {filtered.length} producto{filtered.length !== 1 ? "s" : ""} encontrado{filtered.length !== 1 ? "s" : ""}
       </p>
 
       {/* Grid */}
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 text-muted-foreground">
-          <p className="text-lg font-heading">No se encontraron productos</p>
-          <p className="text-sm mt-1">Probá con otra búsqueda o categoría</p>
+        <div className="text-center py-20 bg-card/50 rounded-xl border border-dashed border-border">
+          <p className="text-lg font-heading font-semibold">Sin resultados</p>
+          <p className="text-sm text-muted-foreground">Intentá con otros filtros</p>
         </div>
       )}
     </section>
